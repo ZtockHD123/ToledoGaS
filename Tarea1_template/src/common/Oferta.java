@@ -8,12 +8,16 @@ public class Oferta implements Serializable {
 	private int idOferta;
 	private int precio;
 	private String tipo;
+	private String comuna;
+	private String region;
 	
-	public Oferta(String proveedor, int idOferta, int precio, String tipo) {
+	public Oferta(String proveedor, int idOferta, int precio, String tipo, String comuna, String region) {
 		this.setProveedor(proveedor);
 		this.setIdOferta(idOferta);
 		this.setPrecio(precio);
 		this.setTipo(tipo);
+		this.setComuna(comuna);
+		this.setRegion(region);
 	}
 	
 	  // Getter y setter para empresa
@@ -48,4 +52,18 @@ public class Oferta implements Serializable {
         this.tipo = tipo;
     }
 	
-}
+    public String getComuna() {
+    	return comuna;
+    }
+    public void setComuna(String comuna) {
+    	this.comuna = comuna;
+    }
+    
+    public String getRegion() {
+    	return region;
+    }
+    public void setRegion(String region) {
+    	this.region = region;
+    }
+    
+    }

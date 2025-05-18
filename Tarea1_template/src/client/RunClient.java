@@ -17,6 +17,7 @@ public class RunClient {
 	            System.out.println("\n--- Menú Cliente ---");
 	            System.out.println("1. Mostrar la base de datos de ofertas");
 	            System.out.println("2. Agregar nueva oferta");
+	            System.out.println("3. Mostrar datos testing");
 	            System.out.println("0. Salir");
 	            System.out.print("Seleccione una opción: ");
 
@@ -28,10 +29,16 @@ public class RunClient {
 	                        cliente.getOfertas(); 
 	                        break;
 	                    case '2':
+	                    	
+	                    	//colocar setter de oferta para la base de datos
 	                        break;
+	                        
+	                    case '3':
+	                    	System.out.println(cliente.getDataFromApi());
+	                    	break;
 	                    case '0':
 	                        System.out.println("Saliendo...");
-	                        break;
+	                        return;
 	                    default:
 	                        System.out.println("Opción no válida.");
 	                        break;

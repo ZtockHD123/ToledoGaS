@@ -42,4 +42,5 @@ public class Client {
 		return server.getDataFromApi();
 	}
 	 
+	
 }
