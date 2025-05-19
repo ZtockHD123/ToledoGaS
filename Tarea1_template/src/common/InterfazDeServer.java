@@ -11,5 +11,6 @@ public interface InterfazDeServer extends Remote{
 	void agregarOferta(Oferta oferta) throws RemoteException;
 	
 	String getDataFromApi() throws RemoteException;
-
+	
+	Object[] getOfertaApi() throws RemoteException;
 }
