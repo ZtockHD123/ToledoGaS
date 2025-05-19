@@ -22,12 +22,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import common.InterfazDeServer;
 import common.Oferta;
 
-import java.nio.charset.StandardCharsets;
+import java.nio.charset.StandardCharsets;{
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 059fbb592065fd2e04a3592ca60271ea4c93bd49
     ArrayList<Oferta> bd_ofertas_copia = new ArrayList<>();
     String url = "jdbc:mysql://localhost:3306/proyecto_paralela";
     String username = "root";
@@ -147,9 +143,7 @@ import java.nio.charset.StandardCharsets;
     }
 
 }
-<<<<<<< HEAD
-=======
-=======
+
 public class ServerImpl extends UnicastRemoteObject implements InterfazDeServer {
 	
 	public ServerImpl() throws RemoteException{
@@ -305,7 +299,3 @@ public class ServerImpl extends UnicastRemoteObject implements InterfazDeServer 
     }
     
 }
-
-    
->>>>>>> daa25f9c8e9faf47f249dfddf0c25f79e7dd7e18
->>>>>>> 059fbb592065fd2e04a3592ca60271ea4c93bd49

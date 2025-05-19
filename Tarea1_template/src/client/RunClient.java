@@ -11,10 +11,7 @@ public class RunClient {
 
     public static void main(String[] args) {
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 059fbb592065fd2e04a3592ca60271ea4c93bd49
+
         Client cliente = new Client();
         try {
             cliente.conectar();
@@ -24,23 +21,7 @@ public class RunClient {
             e.printStackTrace();
             return;
         }
-<<<<<<< HEAD
 
-
-=======
-=======
-	        while (true) {
-	            System.out.println("\n--- Menú Cliente ---");
-	            System.out.println("1. Mostrar la base de datos de ofertas");
-	            System.out.println("2. Obtener datos desde la API");
-	            System.out.println("3. Obtener ofertas desde la API");
-	            System.out.println("0. Salir");
-	            System.out.print("Seleccione una opción: ");
->>>>>>> daa25f9c8e9faf47f249dfddf0c25f79e7dd7e18
-
-
-<<<<<<< HEAD
->>>>>>> 059fbb592065fd2e04a3592ca60271ea4c93bd49
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
                 System.out.println("\n--- Menú Cliente ---");
@@ -49,33 +30,6 @@ public class RunClient {
                 System.out.println("3. Mostrar datos testing API");
                 System.out.println("0. Salir");
                 System.out.print("Seleccione una opción: ");
-<<<<<<< HEAD
-=======
-=======
-	                switch (bufferInput) {
-	                    case '1':
-	                        cliente.getOfertas(); 
-	                        break;
-	                    case '2':
-	                    	System.out.println(cliente.getDataFromApi());
-	                        break;
-	                    case '3':
-	                    	System.out.println(cliente.getOfertaApi());
-	                    	break;
-	                    case '0':
-	                        System.out.println("Saliendo...");
-	                        return;
-	                    default:
-	                        System.out.println("Opción no válida.");
-	                        break;
-	                }
-	            } catch (NumberFormatException e) {
-	                System.out.println("Error: Ingrese un número válido."); 
-	            }
-	            System.in.skip(System.in.available());
-	        }
->>>>>>> daa25f9c8e9faf47f249dfddf0c25f79e7dd7e18
->>>>>>> 059fbb592065fd2e04a3592ca60271ea4c93bd49
 
                 String inputLine = reader.readLine();
 
