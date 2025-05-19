@@ -41,6 +41,30 @@ public class Client {
 	String getDataFromApi() throws RemoteException{
 		return server.getDataFromApi();
 	}
-	 
 	
+	Object[] getOfertaApi() throws RemoteException{
+		
+		Object[] ofertasApi = server.getOfertaApi();
+		
+		if (ofertasApi == null) {
+			
+			System.out.println("Error, no llegó nada desde la API");
+			return null;
+		}else {
+			
+			
+			String id = (String) ofertasApi[0];
+			//String fecha = (String)ofertasApi[1];
+			double precio = (double) ofertasApi[1];
+			String proveedor = (String) ofertasApi[2];
+			String tipo_galon = (String) ofertasApi[3];
+			
+			System.out.println("Las ofertas de gas obtenidas son:");
+			System.out.println(id + " " + precio + " " + proveedor + " " + tipo_galon);
+			
+		}
+		
+		return ofertasApi;
+	}
+	 
 }

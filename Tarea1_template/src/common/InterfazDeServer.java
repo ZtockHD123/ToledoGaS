@@ -9,5 +9,6 @@ public interface InterfazDeServer extends Remote{
 	ArrayList<Oferta> getOfertas() throws RemoteException; 
 	
 	String getDataFromApi() throws RemoteException;
-
+	
+	Object[] getOfertaApi() throws RemoteException;
 }
