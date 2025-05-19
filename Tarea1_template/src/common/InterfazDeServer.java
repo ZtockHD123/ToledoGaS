@@ -8,6 +8,8 @@ public interface InterfazDeServer extends Remote{
 	
 	ArrayList<Oferta> getOfertas() throws RemoteException; 
 	
+	void agregarOferta(Oferta oferta) throws RemoteException;
+	
 	String getDataFromApi() throws RemoteException;
 
 }

@@ -25,18 +25,22 @@ public class Client {
 		for (int i = 0; i < lista_Ofertas.size(); i++) {
 			Oferta oferta = lista_Ofertas.get(i);
 			String proveedor, tipo;
-			int  idOferta, precio;
+			int  id_oferta, precio;
 			
 			proveedor = oferta.getProveedor();
-			idOferta = oferta.getIdOferta();
+			id_oferta = oferta.getIdOferta();
 			precio = oferta.getPrecio();
 			tipo = oferta.getTipo();
 			
-			System.out.println(idOferta + " " + proveedor + " " + tipo + " " + precio);
+			System.out.println(id_oferta + " " + proveedor + " " + tipo + " " + precio);
 		}
 		
 		return null;
 	}
+	
+	public void agregarNuevaOferta(Oferta oferta) throws RemoteException {
+        server.agregarOferta(oferta);
+    }
 	
 	String getDataFromApi() throws RemoteException{
 		return server.getDataFromApi();

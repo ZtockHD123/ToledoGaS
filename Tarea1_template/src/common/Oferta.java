@@ -5,22 +5,17 @@ import java.io.Serializable;
 public class Oferta implements Serializable {
 	
 	private String proveedor;
-	private int idOferta;
+	private int id_oferta;
 	private int precio;
 	private String tipo;
-	private String comuna;
-	private String region;
 	
-	public Oferta(String proveedor, int idOferta, int precio, String tipo, String comuna, String region) {
+	public Oferta( int id_oferta, String proveedor, int precio, String tipo) {
 		this.setProveedor(proveedor);
-		this.setIdOferta(idOferta);
+		this.setIdOferta(id_oferta);
 		this.setPrecio(precio);
 		this.setTipo(tipo);
-		this.setComuna(comuna);
-		this.setRegion(region);
 	}
 	
-	  // Getter y setter para empresa
     public String getProveedor() {
         return proveedor;
     }
@@ -28,15 +23,13 @@ public class Oferta implements Serializable {
         this.proveedor = proveedor;
     }
     
-    // Getter y setter para peso
     public int getIdOferta() {
-        return idOferta;
+        return id_oferta;
     }
-    public void setIdOferta(int idOferta) {
-        this.idOferta = idOferta;
+    public void setIdOferta(int id_oferta) {
+        this.id_oferta = id_oferta;
     }
     
-    // Getter y setter para precio
     public int getPrecio() {
         return precio;
     }
@@ -44,7 +37,6 @@ public class Oferta implements Serializable {
         this.precio = precio;
     }
     
-    // Getter y setter para telefono
     public String getTipo() {
         return tipo;
     }
@@ -52,18 +44,5 @@ public class Oferta implements Serializable {
         this.tipo = tipo;
     }
 	
-    public String getComuna() {
-    	return comuna;
-    }
-    public void setComuna(String comuna) {
-    	this.comuna = comuna;
-    }
-    
-    public String getRegion() {
-    	return region;
-    }
-    public void setRegion(String region) {
-    	this.region = region;
-    }
     
     }
