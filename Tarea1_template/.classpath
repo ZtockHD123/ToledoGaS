@@ -6,7 +6,22 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/Descargas/resources/mysql-connector-j-8.3.0.jar">
+	<classpathentry kind="lib" path="D:/Descargas/Computacion_Paralela_y_Distribuida_Tarea1-main/Computacion_Paralela_y_Distribuida_Tarea1-main/resources/mysql-connector-j-8.3.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Descargas/Computacion_Paralela_y_Distribuida_Tarea1-main/Computacion_Paralela_y_Distribuida_Tarea1-main/resources/jackson-annotations-2.14.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Descargas/Computacion_Paralela_y_Distribuida_Tarea1-main/Computacion_Paralela_y_Distribuida_Tarea1-main/resources/jackson-core-2.14.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Descargas/Computacion_Paralela_y_Distribuida_Tarea1-main/Computacion_Paralela_y_Distribuida_Tarea1-main/resources/jackson-databind-2.14.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

@@ -16,7 +16,7 @@ public class RunClient {
 	        while (true) {
 	            System.out.println("\n--- Menú Cliente ---");
 	            System.out.println("1. Mostrar la base de datos de ofertas");
-	            System.out.println("2. Agregar nueva oferta");
+	            System.out.println("2. Obtener datos desde la API");
 	            System.out.println("0. Salir");
 	            System.out.print("Seleccione una opción: ");
 
@@ -28,6 +28,7 @@ public class RunClient {
 	                        cliente.getOfertas(); 
 	                        break;
 	                    case '2':
+	                    	System.out.println(cliente.getDataFromApi());
 	                        break;
 	                    case '0':
 	                        System.out.println("Saliendo...");

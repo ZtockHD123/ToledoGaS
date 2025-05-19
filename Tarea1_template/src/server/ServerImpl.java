@@ -1,5 +1,9 @@
 package server;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
@@ -17,6 +21,29 @@ public class ServerImpl extends UnicastRemoteObject implements InterfazDeServer 
 	public ServerImpl() throws RemoteException{
 		conectarBD();
 	}
+	
+	
+	private String retrieveToken() throws Exception {
+
+	    String commands = "(Invoke-RestMethod -Uri 'https://api.cne.cl/api/login?email=psreinoso5@gmail.com&password=62255907pA' -Method POST).token";
+	    ProcessBuilder pb = new ProcessBuilder(
+	        "powershell.exe", "-Command", commands
+	    );
+	    pb.redirectErrorStream(true);
+	    Process p = pb.start();
+
+	    try (BufferedReader reader = new BufferedReader(
+	            new InputStreamReader(p.getInputStream()))) {
+	        StringBuilder output = new StringBuilder();
+	        String line;
+	        while ((line = reader.readLine()) != null) {
+	            output.append(line);
+	        }
+	        p.waitFor();
+	        return output.toString().trim();
+	    }
+	}
+
 	
 	private ArrayList<Oferta> bd_Ofertas_copia = new ArrayList<>();
 	
@@ -68,6 +95,42 @@ public class ServerImpl extends UnicastRemoteObject implements InterfazDeServer 
     
     @Override
     public String getDataFromApi(){
-    	return null;
+    	
+    	String output = null;
+    	
+    	try {
+    		
+    		URL apiUrl = new URL("https://api.cne.cl/api/v3/combustible/calefaccion/puntosdeventa");
+    		//URL apiUrl = new URL("https://mindicador.cl/api");
+    		String token = retrieveToken();
+    		
+    		HttpURLConnection connection = (HttpURLConnection) apiUrl.openConnection();
+    		
+    		connection.setRequestMethod("GET");
+    		connection.setRequestProperty("Authorization", "Bearer " + token);
+            connection.setRequestProperty("Accept", "application/json");
+    		
+    		int responseCode = connection.getResponseCode();
+    		
+    		if (responseCode == HttpURLConnection.HTTP_OK) {
+    			
+    			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+    			String inputLine;
+    			StringBuilder response = new StringBuilder();
+    			
+    			while ((inputLine = in.readLine()) != null) {
+    				response.append(inputLine);
+    			}
+    			
+    			in.close();
+    			output = response.toString();
+    		
+    		} else {
+    			System.out.println("Error de conexion de API.");
+    		}
+    	} catch (Exception e){
+    		e.printStackTrace();
+    	}
+    	return output;
     }
 }
