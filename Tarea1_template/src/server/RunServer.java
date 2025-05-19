@@ -2,7 +2,9 @@ package server;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
 import common.InterfazDeServer;
 
 import java.rmi.AlreadyBoundException;

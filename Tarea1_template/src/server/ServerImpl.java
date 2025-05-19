@@ -1,5 +1,7 @@
 package server;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -11,12 +13,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import common.InterfazDeServer;
 import common.Oferta;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
-public class ServerImpl implements InterfazDeServer {
+import java.nio.charset.StandardCharsets;
 
     ArrayList<Oferta> bd_ofertas_copia = new ArrayList<>();
     String url = "jdbc:mysql://localhost:3306/proyecto_paralela";
